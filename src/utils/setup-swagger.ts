@@ -18,6 +18,10 @@ function setupSwagger(app: INestApplication) {
       configService.getOrThrow('app.url', { infer: true }),
       'Development',
     )
+    .addServer(
+      'https://reimagined-invention-rwg9v76gg4f5gq9-3000.app.github.dev',
+      'Workspace',
+    )
     .addServer('https://example.com', 'Staging')
     .build();
   const document = SwaggerModule.createDocument(app, config);
